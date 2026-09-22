@@ -1,0 +1,1134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#080808">
+<title>Classic Expert Finishing LTD | Uyo</title>
+<meta name="description" content="Classic Expert Finishing LTD — professional painting, wallpaper and finishing services in Uyo, Akwa Ibom.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,500;0,9..144,650;1,9..144,500&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{--gold:#d7ad55;--gold-light:#f2d58e;--black:#050505;--dark:#0b0b0b;--dark2:#111;--panel:rgba(255,255,255,.055);--line:rgba(255,255,255,.105);--text:#f7f5ef;--muted:#999;--green:#20d978;}
+*{box-sizing:border-box;margin:0;padding:0;}
+html{scroll-behavior:smooth;background:var(--black);}
+body{font-family:'Inter',ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;background:radial-gradient(circle at 80% 0%,rgba(215,173,85,.08),transparent 30%),var(--black);color:var(--text);overflow-x:hidden;}
+.hero h1,.title,.ai-logo{font-family:'Fraunces',serif;font-weight:650;}
+body.lock{overflow:hidden;}
+a{text-decoration:none;color:inherit;}
+button,input,textarea,select{font:inherit;}
+button{cursor:pointer;}
+img{display:block;width:100%;}
+.ambient{position:fixed;inset:0;pointer-events:none;z-index:-1;overflow:hidden;}
+.orb{position:absolute;width:280px;height:280px;border-radius:50%;filter:blur(55px);opacity:.12;background:var(--gold);animation:floatOrb 14s ease-in-out infinite;will-change:transform;}
+.orb.one{top:5%;right:-120px;}
+.orb.two{bottom:15%;left:-160px;animation-delay:-5s;}
+@keyframes floatOrb{0%,100%{transform:translate(0,0) scale(1);}50%{transform:translate(0,35px) scale(1.08);}}
+.reveal{opacity:0;transform:translateY(35px);transition:opacity .8s cubic-bezier(.2,.8,.2,1),transform .8s cubic-bezier(.2,.8,.2,1);}
+.reveal.visible{opacity:1;transform:none;}
+.scroll-progress{position:fixed;top:0;left:0;height:3px;width:0%;background:linear-gradient(90deg,var(--gold),var(--gold-light));z-index:3200;pointer-events:none;transition:width .08s linear;}
+.cursor-glow{position:fixed;width:460px;height:460px;left:-9999px;top:-9999px;border-radius:50%;pointer-events:none;z-index:1;background:radial-gradient(circle,rgba(215,173,85,.09),transparent 68%);transform:translate(-50%,-50%);}
+.header{position:fixed;top:0;left:0;right:0;height:78px;z-index:1000;background:rgba(5,5,5,.92);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);border-bottom:1px solid var(--line);transition:box-shadow .3s,height .3s;}
+.header.scrolled{box-shadow:0 14px 40px rgba(0,0,0,.4);height:68px;}
+.nav-links a{position:relative;}
+.nav-links a.active{color:var(--gold-light);}
+.nav-links a.active::after{content:"";position:absolute;left:0;right:0;bottom:-6px;height:2px;background:var(--gold);border-radius:2px;}
+.nav{height:100%;max-width:1250px;margin:auto;padding:0 22px;display:flex;align-items:center;justify-content:space-between;}
+.brand{font-weight:950;letter-spacing:2px;font-size:14px;}
+.brand small{display:block;font-size:8px;letter-spacing:4px;color:var(--gold-light);margin-top:2px;}
+.nav-links{display:flex;align-items:center;gap:28px;}
+.nav-links a{font-size:12px;color:#c7c7c7;transition:.25s;}
+.nav-links a:hover{color:var(--gold-light);}
+.nav-cta{padding:11px 17px;border-radius:100px;background:var(--gold);color:#080808!important;font-weight:900;}
+.menu{display:none;background:none;border:0;color:#fff;font-size:25px;}
+.hero{min-height:100svh;padding:170px 22px 100px;display:flex;align-items:center;position:relative;overflow:hidden;background-image:linear-gradient(90deg,rgba(0,0,0,.97) 0%,rgba(0,0,0,.82) 43%,rgba(0,0,0,.38) 100%),url("https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?auto=format&fit=crop&w=2200&q=85");background-repeat:no-repeat;background-position:center;background-size:cover,120%;animation:heroZoom 26s ease-in-out infinite alternate;}
+@keyframes heroZoom{from{background-size:cover,120%;}to{background-size:cover,136%;}}
+@media(prefers-reduced-motion:reduce){.hero{animation:none;}}
+.hero:after{content:"";position:absolute;inset:0;background:linear-gradient(transparent 70%,#050505 100%);}
+.hero-inner{position:relative;z-index:2;width:100%;max-width:1250px;margin:auto;}
+.hero-tag{display:inline-flex;align-items:center;gap:9px;padding:8px 13px;border:1px solid rgba(215,173,85,.38);background:rgba(215,173,85,.06);border-radius:100px;font-size:10px;font-weight:900;letter-spacing:2px;color:var(--gold-light);margin-bottom:24px;}
+.hero-tag i{width:6px;height:6px;border-radius:50%;background:var(--gold);box-shadow:0 0 15px var(--gold);}
+.hero h1{font-size:clamp(46px,7.5vw,96px);line-height:.98;letter-spacing:-1.5px;max-width:1000px;}
+.hero h1 span{display:block;color:var(--gold);position:relative;width:fit-content;}
+.hero h1 span::after{content:"";position:absolute;left:2px;bottom:-.08em;height:.12em;width:0;background:linear-gradient(90deg,var(--gold),var(--gold-light));border-radius:3px;animation:paintStroke 1s cubic-bezier(.16,.8,.24,1) 1.05s forwards;}
+@keyframes paintStroke{to{width:calc(100% - 4px);}}
+@media(prefers-reduced-motion:reduce){.hero h1 span::after{animation:none;width:calc(100% - 4px);}}
+.hero-copy{max-width:610px;color:#bdbdbd;font-size:16px;margin:28px 0 30px;}
+.actions{display:flex;gap:12px;flex-wrap:wrap;}
+.btn{border:0;display:inline-flex;align-items:center;justify-content:center;gap:8px;padding:14px 21px;border-radius:10px;font-size:13px;font-weight:900;transition:transform .25s,box-shadow .25s,background .25s;}
+.btn:hover{transform:translateY(-3px);}
+.btn:active{transform:translateY(-1px) scale(.97);transition:transform .1s;}
+.btn.gold{background:var(--gold);color:#080808;box-shadow:0 12px 35px rgba(215,173,85,.16);}
+.btn.dark{background:rgba(255,255,255,.07);border:1px solid var(--line);color:#fff;}
+.hero-bottom{margin-top:65px;display:flex;gap:35px;flex-wrap:wrap;color:#aaa;font-size:11px;}
+.hero-stat strong{display:block;font-size:22px;color:#fff;}
+.hero-tag.reveal{transition-delay:0s;}
+.hero h1.reveal{transition-delay:.1s;}
+.hero-copy.reveal{transition-delay:.2s;}
+.actions.reveal{transition-delay:.3s;}
+.hero-bottom.reveal{transition-delay:.4s;}
+section{padding:115px 22px;}
+.container{max-width:1250px;margin:auto;}
+.eyebrow{font-size:10px;letter-spacing:4px;font-weight:950;color:var(--gold-light);margin-bottom:13px;}
+.title{font-size:clamp(32px,4.6vw,58px);line-height:1.05;letter-spacing:-1px;max-width:850px;}
+.lead{max-width:670px;margin-top:18px;color:#999;font-size:15px;}
+.service-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:15px;margin-top:50px;}
+.service{min-height:260px;padding:30px;border:1px solid var(--line);border-radius:22px;background:linear-gradient(145deg,rgba(255,255,255,.07),rgba(255,255,255,.025));position:relative;overflow:hidden;transition:transform .4s cubic-bezier(.2,.8,.2,1),border .4s;}
+.service:before{content:"";position:absolute;width:150px;height:150px;right:-70px;top:-70px;border-radius:50%;background:var(--gold);filter:blur(70px);opacity:.08;}
+.service:hover{transform:translateY(-9px) scale(1.015);border-color:rgba(215,173,85,.5);box-shadow:0 24px 60px rgba(0,0,0,.35),0 0 0 1px rgba(215,173,85,.08);}
+.service:hover .service-number{color:var(--gold-light);}
+.service-number{font-size:11px;color:var(--gold);font-weight:900;letter-spacing:2px;transition:color .3s;}
+.service h3{margin-top:45px;font-size:22px;}
+.service p{margin-top:9px;color:#8e8e8e;font-size:13px;}
+.showcase{display:grid;grid-template-columns:1.1fr .9fr;gap:16px;margin-top:50px;}
+.visual{min-height:530px;border-radius:25px;overflow:hidden;position:relative;transition:transform .35s cubic-bezier(.2,.8,.2,1);}
+.visual img{height:100%;object-fit:cover;transition:transform 1s cubic-bezier(.2,.8,.2,1);}
+.visual:hover img{transform:scale(1.045);}
+.visual:after{content:"";position:absolute;inset:0;background:linear-gradient(transparent 40%,rgba(0,0,0,.8));}
+.visual-label{position:absolute;bottom:25px;left:25px;z-index:2;}
+.visual-label strong{font-size:25px;display:block;}
+.visual-label span{font-size:11px;color:#bbb;}
+.visual-stack{display:grid;grid-template-rows:1fr 1fr;gap:16px;}
+.visual.small{min-height:257px;}
+.premium-strip{border-top:1px solid var(--line);border-bottom:1px solid var(--line);padding:25px 0;overflow:hidden;white-space:nowrap;}
+.ticker{display:inline-flex;gap:50px;animation:ticker 25s linear infinite;}
+.ticker span{font-size:12px;letter-spacing:3px;color:#777;}
+.ticker b{color:var(--gold);}
+@keyframes ticker{to{transform:translateX(-50%);}}
+.process{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-top:45px;}
+.step{padding:25px;border:1px solid var(--line);border-radius:18px;background:rgba(255,255,255,.035);}
+.step-number{color:var(--gold);font-size:12px;font-weight:950;}
+.step h3{margin-top:28px;}
+.step p{color:#888;font-size:13px;margin-top:8px;}
+.form-panel{margin-top:45px;padding:32px;border-radius:25px;border:1px solid var(--line);background:linear-gradient(145deg,rgba(255,255,255,.065),rgba(255,255,255,.025));box-shadow:0 30px 100px rgba(0,0,0,.25);}
+.form-grid{display:grid;grid-template-columns:1fr 1fr;gap:15px;}
+.field{display:flex;flex-direction:column;gap:7px;}
+.field.full{grid-column:1/-1;}
+.field label{font-size:10px;font-weight:900;letter-spacing:1px;color:#aaa;}
+.field input,.field textarea,.field select{width:100%;padding:14px;border-radius:11px;border:1px solid #292929;background:#080808;color:#fff;outline:none;transition:.25s;}
+.field input:focus,.field textarea:focus,.field select:focus{border-color:var(--gold);box-shadow:0 0 0 3px rgba(215,173,85,.06);}
+.field textarea{min-height:130px;resize:vertical;}
+.referral{padding:45px;border:1px solid rgba(215,173,85,.2);border-radius:25px;background:radial-gradient(circle at 90% 20%,rgba(215,173,85,.15),transparent 30%),#101010;}
+.faq{max-width:850px;margin-top:40px;display:grid;gap:10px;}
+details{border:1px solid var(--line);background:rgba(255,255,255,.035);border-radius:14px;padding:18px;}
+summary{cursor:pointer;font-weight:850;}
+details p{color:#888;font-size:13px;margin-top:10px;}
+footer{padding:50px 22px;border-top:1px solid var(--line);}
+.footer{max-width:1250px;margin:auto;display:flex;justify-content:space-between;gap:30px;flex-wrap:wrap;}
+.footer p{font-size:12px;color:#777;}
+.ai-launch{position:fixed;right:20px;bottom:20px;width:62px;height:62px;border-radius:20px;border:1px solid rgba(215,173,85,.45);background:linear-gradient(145deg,#e4bf6c,#9f7731);color:#080808;z-index:1500;display:grid;place-items:center;font-size:24px;box-shadow:0 18px 50px rgba(0,0,0,.5);transition:transform .3s,border-radius .3s;}
+.ai-launch:hover{transform:translateY(-5px) rotate(-3deg);border-radius:24px;}
+.ai-launch small{position:absolute;right:-3px;top:-4px;width:12px;height:12px;border-radius:50%;background:#29e47b;border:2px solid #050505;}
+.ai-overlay{position:fixed;inset:0;z-index:3000;background:rgba(0,0,0,.75);backdrop-filter:blur(6px);display:none;align-items:flex-end;justify-content:flex-end;padding:20px;}
+.ai-overlay.show{display:flex;}
+.ai-window{width:min(430px,100%);height:min(700px,calc(100svh - 40px));border:1px solid rgba(255,255,255,.12);border-radius:27px;background:linear-gradient(145deg,#151515,#090909);box-shadow:0 35px 100px rgba(0,0,0,.7);overflow:hidden;display:flex;flex-direction:column;animation:chatIn .45s cubic-bezier(.2,.8,.2,1);}
+@keyframes chatIn{from{opacity:0;transform:translateY(35px) scale(.94);}to{opacity:1;transform:none;}}
+.ai-head{padding:18px;display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid var(--line);}
+.ai-title{display:flex;align-items:center;gap:11px;}
+.ai-logo{width:42px;height:42px;border-radius:14px;display:grid;place-items:center;background:linear-gradient(135deg,var(--gold-light),var(--gold));color:#080808;font-weight:950;}
+.ai-title strong{display:block;font-size:14px;}
+.ai-title span{display:block;font-size:10px;color:#777;margin-top:2px;}
+.ai-close{width:35px;height:35px;border-radius:50%;border:1px solid var(--line);background:#181818;color:#fff;}
+.ai-messages{flex:1;overflow-y:auto;padding:18px;display:flex;flex-direction:column;gap:11px;scroll-behavior:smooth;}
+.msg{max-width:84%;padding:12px 14px;border-radius:17px;font-size:13px;line-height:1.55;animation:msgIn .3s ease;}
+@keyframes msgIn{from{opacity:0;transform:translateY(8px);}to{opacity:1;transform:none;}}
+.msg.ai{align-self:flex-start;background:#191919;border-bottom-left-radius:5px;color:#ddd;}
+.msg.user{align-self:flex-end;background:var(--gold);color:#090909;border-bottom-right-radius:5px;}
+.ai-suggestions{padding:0 15px 10px;display:flex;gap:7px;overflow-x:auto;}
+.ai-suggestion{white-space:nowrap;padding:8px 10px;border-radius:100px;border:1px solid var(--line);background:#111;color:#bbb;font-size:10px;}
+.ai-input{padding:12px;border-top:1px solid var(--line);display:flex;gap:8px;}
+.ai-input input{flex:1;background:#080808;border:1px solid #292929;border-radius:13px;color:#fff;padding:12px;outline:none;}
+.ai-send{width:45px;border:0;border-radius:13px;background:var(--gold);color:#080808;font-weight:950;}
+.modal{position:fixed;inset:0;z-index:3500;display:none;align-items:center;justify-content:center;padding:18px;background:rgba(0,0,0,.8);backdrop-filter:blur(6px);}
+
+/* SECOND CONTACT BUTTON — WhatsApp */
+.wa-launch{
+position:fixed;right:22px;bottom:96px;width:56px;height:56px;border-radius:50%;
+background:linear-gradient(145deg,#2fe07a,#1a9c53);color:#fff;z-index:1500;
+display:grid;place-items:center;box-shadow:0 14px 38px rgba(0,0,0,.45);
+transition:transform .3s;animation:pulseRing 2.8s ease-out infinite;
+}
+.wa-launch:hover{transform:translateY(-5px) scale(1.06);animation-play-state:paused;}
+@keyframes pulseRing{
+0%{box-shadow:0 14px 38px rgba(0,0,0,.45),0 0 0 0 rgba(47,224,122,.55);}
+70%{box-shadow:0 14px 38px rgba(0,0,0,.45),0 0 0 14px rgba(47,224,122,0);}
+100%{box-shadow:0 14px 38px rgba(0,0,0,.45),0 0 0 0 rgba(47,224,122,0);}
+}
+@media(prefers-reduced-motion:reduce){.wa-launch{animation:none;}}
+
+/* AI TYPING INDICATOR */
+.typing-dots{display:inline-flex;gap:4px;padding:2px 0;}
+.typing-dots span{width:6px;height:6px;border-radius:50%;background:#999;animation:typingBounce 1.1s ease-in-out infinite;}
+.typing-dots span:nth-child(2){animation-delay:.15s;}
+.typing-dots span:nth-child(3){animation-delay:.3s;}
+@keyframes typingBounce{0%,60%,100%{transform:translateY(0);opacity:.4;}30%{transform:translateY(-4px);opacity:1;}}
+
+/* STAGGERED REVEAL for grouped cards */
+.service-grid .service.reveal:nth-child(1){transition-delay:0s;}
+.service-grid .service.reveal:nth-child(2){transition-delay:.06s;}
+.service-grid .service.reveal:nth-child(3){transition-delay:.12s;}
+.service-grid .service.reveal:nth-child(4){transition-delay:.18s;}
+.service-grid .service.reveal:nth-child(5){transition-delay:.24s;}
+.service-grid .service.reveal:nth-child(6){transition-delay:.3s;}
+.process .step.reveal:nth-child(1){transition-delay:0s;}
+.process .step.reveal:nth-child(2){transition-delay:.08s;}
+.process .step.reveal:nth-child(3){transition-delay:.16s;}
+.process .step.reveal:nth-child(4){transition-delay:.24s;}
+.modal.show{display:flex;}
+.modal-box{width:min(600px,100%);max-height:90svh;overflow:auto;padding:28px;border-radius:25px;border:1px solid var(--line);background:#111;position:relative;}
+.close{position:absolute;right:15px;top:15px;width:35px;height:35px;border-radius:50%;border:1px solid var(--line);background:#191919;color:#fff;}
+#adminApp{display:none;min-height:100svh;background:#070707;}
+.admin-head{height:72px;position:sticky;top:0;z-index:50;display:flex;align-items:center;justify-content:space-between;padding:0 22px;background:rgba(8,8,8,.94);backdrop-filter:blur(15px);border-bottom:1px solid var(--line);}
+.admin-layout{display:grid;grid-template-columns:220px 1fr;min-height:calc(100svh - 72px);}
+.sidebar{padding:15px;border-right:1px solid var(--line);background:#090909;}
+.side{width:100%;padding:12px;text-align:left;background:none;border:0;border-radius:10px;color:#888;margin-bottom:5px;}
+.side.active,.side:hover{background:#171717;color:#fff;}
+.admin-content{padding:30px;max-width:1500px;width:100%;}
+.admin-section{display:none;}
+.admin-section.active{display:block;}
+.stats{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin:25px 0 35px;}
+.stat{padding:20px;border:1px solid var(--line);border-radius:17px;background:#101010;}
+.stat small{color:#777;display:block;font-size:10px;margin-bottom:8px;}
+.stat strong{font-size:30px;color:var(--gold-light);}
+.table-wrap{overflow-x:auto;margin-top:20px;}
+table{width:100%;border-collapse:collapse;background:#101010;border:1px solid var(--line);}
+th,td{padding:12px;border-bottom:1px solid #222;font-size:12px;text-align:left;white-space:nowrap;}
+th{color:var(--gold-light);background:#171717;}
+.admin-actions{display:flex;gap:8px;flex-wrap:wrap;margin:15px 0;}
+.admin-actions button{padding:10px 14px;border-radius:9px;border:1px solid var(--line);background:#171717;color:#fff;}
+.status{padding:5px 8px;border-radius:100px;background:#252525;font-size:10px;}
+.login{width:min(420px,100%);text-align:center;}
+.login input{width:100%;padding:14px;background:#080808;border:1px solid #292929;border-radius:11px;color:#fff;outline:none;margin:15px 0 10px;}
+.toast{position:fixed;left:50%;bottom:25px;transform:translate(-50%,100px);opacity:0;z-index:6000;padding:12px 17px;border-radius:12px;background:#fff;color:#080808;font-size:12px;font-weight:900;transition:.3s;}
+.toast.show{opacity:1;transform:translate(-50%,0);}
+@media(max-width:900px){
+.nav-links{display:none;position:absolute;top:78px;left:0;right:0;padding:15px 20px;background:#080808;border-bottom:1px solid var(--line);flex-direction:column;align-items:stretch;}
+.nav-links.open{display:flex;}
+.menu{display:block;}
+.service-grid{grid-template-columns:1fr 1fr;}
+.showcase{grid-template-columns:1fr;}
+.visual-stack{grid-template-columns:1fr 1fr;grid-template-rows:none;}
+.visual.small{min-height:240px;}
+.process{grid-template-columns:1fr 1fr;}
+.stats{grid-template-columns:1fr 1fr;}
+.admin-layout{grid-template-columns:1fr;}
+.sidebar{display:flex;overflow-x:auto;border-right:0;border-bottom:1px solid var(--line);gap:5px;}
+.side{white-space:nowrap;width:auto;}
+}
+@media(max-width:580px){
+.hero{padding-top:145px;}
+.hero h1{letter-spacing:-0.5px;}
+.hero-bottom{gap:22px;}
+section{padding:85px 16px;}
+.service-grid,.process,.form-grid{grid-template-columns:1fr;}
+.showcase{gap:12px;}
+.visual{min-height:380px;}
+.visual-stack{grid-template-columns:1fr;}
+.visual.small{min-height:220px;}
+.form-panel,.referral{padding:20px;}
+.admin-content{padding:20px 13px;}
+.ai-overlay{padding:0;align-items:flex-end;}
+.ai-window{height:100svh;max-height:none;border-radius:25px 25px 0 0;}
+}
+</style>
+</head>
+<body>
+<div class="ambient"><div class="orb one"></div><div class="orb two"></div></div>
+
+<div id="publicSite">
+
+<header class="header">
+<nav class="nav">
+<a href="#home" class="brand">CLASSIC EXPERT<small>FINISHING LTD</small></a>
+<button class="menu" id="menu">☰</button>
+<div class="nav-links" id="navLinks">
+<a href="#services">Services</a>
+<a href="#work">Work</a>
+<a href="#process">Process</a>
+<a href="#enquire">Enquire</a>
+<a href="https://wa.me/2348063032883?text=Hello%20Classic%20Expert%20Finishing%20LTD" class="nav-cta">WhatsApp</a>
+</div>
+</nav>
+</header>
+
+<section class="hero" id="home">
+<div class="hero-inner">
+<div class="hero-tag reveal"><i></i>PREMIUM FINISHING • UYO, AKWA IBOM</div>
+<h1 class="reveal">YOUR SPACE.<span>FINISHED RIGHT.</span></h1>
+<p class="hero-copy reveal">Professional painting, decorative finishing, wallpaper installation and property restoration for homes, businesses and commercial spaces.</p>
+<div class="actions reveal">
+<a href="#enquire" class="btn gold">Start A Project →</a>
+<a href="tel:+2348132410553" class="btn dark">Call 0813 241 0553</a>
+</div>
+<div class="hero-bottom reveal">
+<div class="hero-stat"><strong>06+</strong>Services</div>
+<div class="hero-stat"><strong>UYO</strong>Akwa Ibom</div>
+<div class="hero-stat"><strong>24/7</strong>Website Enquiries</div>
+</div>
+</div>
+</section>
+
+<div class="premium-strip">
+<div class="ticker">
+<span>INTERIOR <b>✦</b></span><span>EXTERIOR <b>✦</b></span><span>WALLPAPER <b>✦</b></span><span>DECORATIVE FINISHING <b>✦</b></span><span>DOOR PAINTING <b>✦</b></span><span>RESTORATION <b>✦</b></span>
+<span>INTERIOR <b>✦</b></span><span>EXTERIOR <b>✦</b></span><span>WALLPAPER <b>✦</b></span>
+</div>
+</div>
+
+<section id="services">
+<div class="container">
+<div class="eyebrow reveal">WHAT WE DO</div>
+<h2 class="title reveal">Finishing services designed around the space.</h2>
+<p class="lead reveal">From a single door to an entire property, Classic Expert Finishing LTD provides professional finishing solutions in Uyo.</p>
+<div class="service-grid">
+<div class="service reveal"><div class="service-number">01 / DOORS</div><h3>Door Painting</h3><p>Refresh doors with clean, professional painting and finishing.</p></div>
+<div class="service reveal"><div class="service-number">02 / EXTERIOR</div><h3>Exterior Painting</h3><p>Transform exterior walls and property surfaces with a durable finish.</p></div>
+<div class="service reveal"><div class="service-number">03 / INTERIOR</div><h3>Interior Painting</h3><p>Create a cleaner, fresher and more refined interior environment.</p></div>
+<div class="service reveal"><div class="service-number">04 / DESIGN</div><h3>Speciality Design</h3><p>Decorative and speciality painting for spaces that need something different.</p></div>
+<div class="service reveal"><div class="service-number">05 / WALLPAPER</div><h3>Wallpaper Hanging</h3><p>Professional wallpaper installation with attention to alignment and finish.</p></div>
+<div class="service reveal"><div class="service-number">06 / REPAIR</div><h3>Water-Damage Repair</h3><p>Repair and finishing work for walls affected by water damage.</p></div>
+</div>
+</div>
+</section>
+
+<section id="work">
+<div class="container">
+<div class="eyebrow reveal">THE FINISH</div>
+<h2 class="title reveal">A better finish changes the entire atmosphere.</h2>
+<div class="showcase">
+<div class="visual reveal">
+<img src="https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?auto=format&fit=crop&w=1400&q=85" alt="Premium interior">
+<div class="visual-label"><strong>Interior Finishing</strong><span>Clean. Refined. Professional.</span></div>
+</div>
+<div class="visual-stack">
+<div class="visual small reveal">
+<img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1000&q=85" alt="Property exterior">
+<div class="visual-label"><strong>Exterior</strong><span>Built to make an impression.</span></div>
+</div>
+<div class="visual small reveal">
+<img src="https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?auto=format&fit=crop&w=1000&q=85" alt="Decorative interior">
+<div class="visual-label"><strong>Decorative Design</strong><span>Details matter.</span></div>
+</div>
+</div>
+</div>
+</div>
+</section>
+
+<section id="process">
+<div class="container">
+<div class="eyebrow reveal">THE PROCESS</div>
+<h2 class="title reveal">Simple from first message to final finish.</h2>
+<div class="process">
+<div class="step reveal"><div class="step-number">01</div><h3>Tell Us</h3><p>Describe the service and property through the website.</p></div>
+<div class="step reveal"><div class="step-number">02</div><h3>Get In Touch</h3><p>The business reviews your enquiry and contacts you.</p></div>
+<div class="step reveal"><div class="step-number">03</div><h3>Plan</h3><p>Discuss the work, requirements, location and next steps.</p></div>
+<div class="step reveal"><div class="step-number">04</div><h3>Finish</h3><p>The project moves from plan to finished space.</p></div>
+</div>
+</div>
+</section>
+
+<section id="enquire">
+<div class="container">
+<div class="eyebrow reveal">START A CONVERSATION</div>
+<h2 class="title reveal">Tell us what your space needs.</h2>
+<p class="lead reveal">Send your details and the business can follow up with you directly.</p>
+<div class="form-panel reveal">
+<form id="leadForm">
+<div class="form-grid">
+<div class="field"><label>FULL NAME *</label><input id="leadName" required placeholder="Your name"></div>
+<div class="field"><label>PHONE *</label><input id="leadPhone" required type="tel" placeholder="080..."></div>
+<div class="field"><label>EMAIL</label><input id="leadEmail" type="email" placeholder="Email address"></div>
+<div class="field">
+<label>SERVICE *</label>
+<select id="leadService" required>
+<option value="">Choose service</option>
+<option>Door Painting</option>
+<option>Exterior Painting</option>
+<option>Interior Painting</option>
+<option>Speciality Design Painting</option>
+<option>Wallpaper Hanging</option>
+<option>Water-Damage Repair</option>
+<option>Other</option>
+</select>
+</div>
+<div class="field full"><label>PROPERTY LOCATION</label><input id="leadLocation" placeholder="Where is the property?"></div>
+<div class="field full"><label>PROJECT DETAILS</label><textarea id="leadMessage" placeholder="Tell us what you need..."></textarea></div>
+</div>
+<br>
+<button class="btn gold" id="leadButton">Submit Enquiry →</button>
+</form>
+</div>
+</div>
+</section>
+
+<section>
+<div class="container">
+<div class="referral reveal">
+<div class="eyebrow">REFER SOMEONE</div>
+<h2 class="title">Someone you know needs a better finish?</h2>
+<p class="lead">Send their details and let Classic Expert Finishing LTD follow up.</p>
+<br>
+<button class="btn gold" onclick="openModal('referralModal')">Make A Referral →</button>
+</div>
+</div>
+</section>
+
+<section>
+<div class="container">
+<div class="eyebrow reveal">QUESTIONS</div>
+<h2 class="title reveal">Frequently asked.</h2>
+<div class="faq">
+<details class="reveal"><summary>What services do you provide?</summary><p>Door painting, exterior painting, interior painting, speciality design painting, wallpaper hanging and water-damage repair.</p></details>
+<details class="reveal"><summary>Where are you located?</summary><p>Classic Expert Finishing LTD is listed at Mbierebe, John Linus, Uyo 500321, Akwa Ibom.</p></details>
+<details class="reveal"><summary>Can I ask the AI assistant questions?</summary><p>Yes. Use the AI button in the bottom-right corner. It can answer general questions and explain the company's services.</p></details>
+<details class="reveal"><summary>How can I contact the business?</summary><p>Call 0813 241 0553 or WhatsApp 0806 303 2883.</p></details>
+</div>
+</div>
+</section>
+
+<footer>
+<div class="footer">
+<div><div class="brand">CLASSIC EXPERT<small>FINISHING LTD</small></div></div>
+<p>Mbierebe, John Linus, Uyo, Akwa Ibom</p>
+<p>Call: 0813 241 0553</p>
+<p>WhatsApp: 0806 303 2883</p>
+<p>© 2026 Classic Expert Finishing LTD</p>
+</div>
+</footer>
+
+</div>
+
+<a class="wa-launch" href="https://wa.me/2348063032883?text=Hello%20Classic%20Expert%20Finishing%20LTD%2C%20I%27d%20like%20to%20enquire." target="_blank" rel="noopener" aria-label="Chat on WhatsApp">
+<svg width="26" height="26" viewBox="0 0 24 24" fill="none"><path d="M17.6 6.3A8.9 8.9 0 0 0 3.1 17l-1.1 4 4.1-1.1a8.9 8.9 0 0 0 4.3 1.1h0a8.9 8.9 0 0 0 6.2-15.2 8.9 8.9 0 0 0-2.9-2h0a8.9 8.9 0 0 0-8.1 2.5" stroke="#fff" stroke-width="1.7" fill="none"/><path d="M8.4 7.6c.2-.5.4-.5.6-.5h.5c.2 0 .4 0 .5.4.2.4.6 1.5.7 1.6a.4.4 0 0 1 0 .4c-.1.2-.2.3-.3.5-.2.2-.3.3-.1.5.6 1 1.2 1.6 2.2 2.1.2.1.3.1.4-.1.2-.2.5-.6.7-.8.2-.2.3-.1.5 0 .2.1 1.4.7 1.6.8.2.1.4.1.4.3 0 .2 0 .9-.3 1.3-.3.5-1.2.9-1.7.9-.5 0-1.3-.1-2.8-.9-2-1-3.3-2.9-3.4-3.1-.1-.1-.8-1.1-.8-2.1 0-1 .5-1.5.7-1.7z" fill="#fff"/></svg>
+</a>
+<button class="ai-launch" onclick="openAI()" aria-label="Open AI assistant">✦<small></small></button>
+
+<div class="ai-overlay" id="aiOverlay">
+<div class="ai-window">
+<div class="ai-head">
+<div class="ai-title">
+<div class="ai-logo">✦</div>
+<div><strong>Classic Expert AI</strong><span>Available to help • Uyo</span></div>
+</div>
+<button class="ai-close" onclick="closeAI()">×</button>
+</div>
+<div class="ai-messages" id="aiMessages">
+<div class="msg ai">Hi, I'm the Classic Expert assistant. 👋<br><br>Ask me about our services, how booking works, water-damage repair, wallpaper, pricing, or where we're based.</div>
+</div>
+<div class="ai-suggestions">
+<button class="ai-suggestion" onclick="quickAI('What services do you offer?')">Services</button>
+<button class="ai-suggestion" onclick="quickAI('How do I book a project?')">How to book</button>
+<button class="ai-suggestion" onclick="quickAI('How much does it cost?')">Pricing</button>
+<button class="ai-suggestion" onclick="quickAI('Where are you located?')">Location</button>
+</div>
+<div class="ai-input">
+<input id="aiInput" placeholder="Ask anything..." autocomplete="off">
+<button class="ai-send" onclick="sendAI()">↑</button>
+</div>
+</div>
+</div>
+
+<div class="modal" id="referralModal">
+<div class="modal-box">
+<button class="close" onclick="closeModal('referralModal')">×</button>
+<div class="eyebrow">REFERRAL</div>
+<h2>Refer Someone</h2>
+<br>
+<form id="referralForm">
+<div class="field"><label>YOUR NAME</label><input id="referrerName" required></div><br>
+<div class="field"><label>YOUR PHONE</label><input id="referrerPhone" required></div><br>
+<div class="field"><label>PERSON YOU'RE REFERRING</label><input id="customerName" required></div><br>
+<div class="field"><label>THEIR PHONE</label><input id="customerPhone" required></div><br>
+<div class="field">
+<label>SERVICE</label>
+<select id="referralService">
+<option>Interior Painting</option><option>Exterior Painting</option><option>Door Painting</option><option>Speciality Design Painting</option><option>Wallpaper Hanging</option><option>Water-Damage Repair</option><option>Other</option>
+</select>
+</div><br>
+<div class="field"><label>MESSAGE</label><textarea id="referralMessage"></textarea></div><br>
+<button class="btn gold">Submit Referral →</button>
+</form>
+</div>
+</div>
+
+<div class="modal" id="adminLogin">
+<div class="modal-box login">
+<button class="close" onclick="closeModal('adminLogin')">×</button>
+<div class="eyebrow">PRIVATE COMMAND CENTER</div>
+<h2>Owner Login</h2>
+<p style="color:#777;margin-top:8px">This area is for the business owner.</p>
+<input id="adminCode" type="password" placeholder="Private admin code">
+<button class="btn gold" style="width:100%" onclick="loginAdmin()">Enter Dashboard</button>
+</div>
+</div>
+
+<div id="adminApp">
+<header class="admin-head">
+<div class="brand">CLASSIC EXPERT<small>COMMAND CENTER</small></div>
+<button class="btn dark" onclick="logoutAdmin()">Exit</button>
+</header>
+<div class="admin-layout">
+<aside class="sidebar">
+<button class="side active" onclick="adminSection('dash',this)">📊 Dashboard</button>
+<button class="side" onclick="adminSection('leads',this)">📩 Leads</button>
+<button class="side" onclick="adminSection('refs',this)">🔁 Referrals</button>
+<button class="side" onclick="adminSection('calendar',this)">📅 Calendar</button>
+<button class="side" onclick="adminSection('tasks',this)">📝 Follow-ups</button>
+<button class="side" onclick="adminSection('visitors',this)">👥 Visitors</button>
+<button class="side" onclick="adminSection('chat',this)">💬 Chat Questions</button>
+</aside>
+<main class="admin-content">
+
+<div class="admin-section active" id="section-dash">
+<div class="eyebrow">OVERVIEW</div>
+<h1>Business Command Center</h1>
+<div class="stats">
+<div class="stat"><small>TOTAL VISITORS</small><strong id="sVisitors">0</strong></div>
+<div class="stat"><small>TODAY</small><strong id="sToday">0</strong></div>
+<div class="stat"><small>TOTAL LEADS</small><strong id="sLeads">0</strong></div>
+<div class="stat"><small>NEW LEADS</small><strong id="sNew">0</strong></div>
+<div class="stat"><small>REFERRALS</small><strong id="sRefs">0</strong></div>
+<div class="stat"><small>NEW REFERRALS</small><strong id="sNewRefs">0</strong></div>
+<div class="stat"><small>FOLLOW-UPS</small><strong id="sTasks">0</strong></div>
+<div class="stat"><small>APPOINTMENTS</small><strong id="sAppointments">0</strong></div>
+<div class="stat"><small>UNANSWERED CHAT Qs</small><strong id="sChat">0</strong></div>
+</div>
+<div class="admin-actions">
+<button onclick="loadDashboard()">↻ Refresh</button>
+<button onclick="openModal('taskModal')">+ Follow-up</button>
+<button onclick="openModal('appointmentModal')">+ Appointment</button>
+</div>
+<h2>Recent Leads</h2>
+<div class="table-wrap" id="recentLeads"></div>
+</div>
+
+<div class="admin-section" id="section-leads">
+<div class="eyebrow">CUSTOMERS</div>
+<h1>Customer Enquiries</h1>
+<div class="table-wrap" id="leadsTable"></div>
+</div>
+
+<div class="admin-section" id="section-refs">
+<div class="eyebrow">REFERRAL NETWORK</div>
+<h1>Referrals</h1>
+<div class="table-wrap" id="refsTable"></div>
+</div>
+
+<div class="admin-section" id="section-calendar">
+<div class="eyebrow">SCHEDULE</div>
+<h1>Appointments</h1>
+<div class="admin-actions"><button onclick="openModal('appointmentModal')">+ Add Appointment</button></div>
+<div class="table-wrap" id="appointmentsTable"></div>
+</div>
+
+<div class="admin-section" id="section-tasks">
+<div class="eyebrow">CUSTOMER CARE</div>
+<h1>Follow-ups</h1>
+<div class="admin-actions"><button onclick="openModal('taskModal')">+ Add Follow-up</button></div>
+<div class="table-wrap" id="tasksTable"></div>
+</div>
+
+<div class="admin-section" id="section-visitors">
+<div class="eyebrow">WEBSITE ACTIVITY</div>
+<h1>Visitors</h1>
+<div class="table-wrap" id="visitorsTable"></div>
+</div>
+
+<div class="admin-section" id="section-chat">
+<div class="eyebrow">AI ASSISTANT</div>
+<h1>Questions It Couldn't Answer</h1>
+<p style="color:#888;font-size:13px;margin-top:6px">These are things visitors asked the chat assistant that it wasn't confident about — a good source of ideas for new services, FAQs, or follow-ups.</p>
+<div class="table-wrap" id="chatTable"></div>
+</div>
+
+</main>
+</div>
+</div>
+
+<div class="modal" id="taskModal">
+<div class="modal-box">
+<button class="close" onclick="closeModal('taskModal')">×</button>
+<div class="eyebrow">FOLLOW-UP</div>
+<h2>New Follow-up</h2>
+<br>
+<form id="taskForm">
+<div class="field"><label>CUSTOMER</label><input id="taskCustomer" required></div><br>
+<div class="field"><label>PHONE</label><input id="taskPhone"></div><br>
+<div class="field"><label>DATE</label><input id="taskDate" type="date" required></div><br>
+<div class="field"><label>TIME</label><input id="taskTime" type="time"></div><br>
+<div class="field"><label>TASK</label><input id="taskText" required></div><br>
+<div class="field"><label>NOTES</label><textarea id="taskNotes"></textarea></div><br>
+<button class="btn gold">Save Follow-up</button>
+</form>
+</div>
+</div>
+
+<div class="modal" id="appointmentModal">
+<div class="modal-box">
+<button class="close" onclick="closeModal('appointmentModal')">×</button>
+<div class="eyebrow">CALENDAR</div>
+<h2>New Appointment</h2>
+<br>
+<form id="appointmentForm">
+<div class="field"><label>CUSTOMER</label><input id="appointmentCustomer" required></div><br>
+<div class="field"><label>PHONE</label><input id="appointmentPhone"></div><br>
+<div class="field"><label>DATE</label><input id="appointmentDate" type="date" required></div><br>
+<div class="field"><label>TIME</label><input id="appointmentTime" type="time"></div><br>
+<div class="field">
+<label>SERVICE</label>
+<select id="appointmentService">
+<option>Interior Painting</option><option>Exterior Painting</option><option>Door Painting</option><option>Speciality Design Painting</option><option>Wallpaper Hanging</option><option>Water-Damage Repair</option><option>Other</option>
+</select>
+</div><br>
+<div class="field"><label>LOCATION</label><input id="appointmentLocation"></div><br>
+<div class="field"><label>NOTES</label><textarea id="appointmentNotes"></textarea></div><br>
+<button class="btn gold">Save Appointment</button>
+</form>
+</div>
+</div>
+
+<div class="toast" id="toast"></div>
+
+<script>
+const CRM_API = "PASTE_YOUR_APPS_SCRIPT_EXEC_URL_HERE";
+const CALL_NUMBER = "2348132410553";
+const WHATSAPP_NUMBER = "2348063032883";
+let ADMIN_KEY="";
+let DATA=null;
+let AI_HISTORY=[];
+
+function toast(text){
+const t=document.getElementById("toast");
+t.textContent=text;
+t.classList.add("show");
+setTimeout(()=>{t.classList.remove("show");},3000);
+}
+
+function esc(value){
+return String(value??"").replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;").replace(/"/g,"&quot;").replace(/'/g,"&#039;");
+}
+
+async function getAPI(params){
+const url=CRM_API+"?"+new URLSearchParams(params);
+const r=await fetch(url);
+return r.json();
+}
+
+async function postAPI(data){
+const r=await fetch(CRM_API,{method:"POST",headers:{"Content-Type":"text/plain;charset=utf-8"},body:JSON.stringify(data)});
+return r.json();
+}
+
+document.getElementById("menu").onclick=()=>{
+document.getElementById("navLinks").classList.toggle("open");
+};
+
+const observer=new IntersectionObserver(entries=>{
+entries.forEach(entry=>{
+if(entry.isIntersecting){entry.target.classList.add("visible");observer.unobserve(entry.target);}
+});
+},{threshold:.12});
+document.querySelectorAll(".reveal").forEach(el=>observer.observe(el));
+
+/* Scroll progress bar + header shrink */
+const scrollBar=document.createElement("div");
+scrollBar.className="scroll-progress";
+document.body.appendChild(scrollBar);
+const headerEl=document.querySelector(".header");
+window.addEventListener("scroll",()=>{
+const h=document.documentElement;
+const max=h.scrollHeight-h.clientHeight;
+scrollBar.style.width=(max>0?(h.scrollTop/max)*100:0)+"%";
+headerEl.classList.toggle("scrolled",h.scrollTop>10);
+},{passive:true});
+
+/* Active nav-link highlighting while scrolling */
+const navLinkMap={};
+document.querySelectorAll('.nav-links a[href^="#"]').forEach(a=>{
+const id=a.getAttribute("href").slice(1);
+const sec=document.getElementById(id);
+if(sec)navLinkMap[id]=a;
+});
+const navObserver=new IntersectionObserver(entries=>{
+entries.forEach(entry=>{
+if(entry.isIntersecting){
+Object.values(navLinkMap).forEach(a=>a.classList.remove("active"));
+navLinkMap[entry.target.id]?.classList.add("active");
+}
+});
+},{rootMargin:"-45% 0px -50% 0px"});
+Object.keys(navLinkMap).forEach(id=>navObserver.observe(document.getElementById(id)));
+
+/* Desktop-only ambient cursor glow + gentle card tilt */
+const wantsMotion=matchMedia("(hover:hover) and (pointer:fine)").matches && !matchMedia("(prefers-reduced-motion: reduce)").matches;
+if(wantsMotion){
+const glow=document.createElement("div");
+glow.className="cursor-glow";
+document.body.appendChild(glow);
+window.addEventListener("mousemove",e=>{
+glow.style.left=e.clientX+"px";
+glow.style.top=e.clientY+"px";
+},{passive:true});
+
+function addTilt(selector,intensity){
+document.querySelectorAll(selector).forEach(el=>{
+el.addEventListener("mousemove",e=>{
+const r=el.getBoundingClientRect();
+const x=(e.clientX-r.left)/r.width-.5;
+const y=(e.clientY-r.top)/r.height-.5;
+el.style.transform=`perspective(800px) rotateY(${x*intensity}deg) rotateX(${-y*intensity}deg) translateY(-8px)`;
+});
+el.addEventListener("mouseleave",()=>{el.style.transform="";});
+});
+}
+addTilt(".service",7);
+addTilt(".visual",3);
+}
+
+function track(){
+if(!CRM_API || CRM_API.includes("PASTE_YOUR"))return;
+let source=new URLSearchParams(location.search).get("utm_source")||document.referrer||"Direct";
+getAPI({action:"visitor",page:location.hash||"Home",source:source,device:innerWidth<700?"Mobile":"Desktop"}).catch(()=>{});
+}
+track();
+
+function openModal(id){document.getElementById(id).classList.add("show");}
+function closeModal(id){document.getElementById(id).classList.remove("show");}
+
+document.getElementById("leadForm").addEventListener("submit",async e=>{
+e.preventDefault();
+const btn=document.getElementById("leadButton");
+btn.disabled=true;
+btn.textContent="Sending...";
+try{
+const result=await postAPI({
+action:"lead",
+name:document.getElementById("leadName").value,
+phone:document.getElementById("leadPhone").value,
+email:document.getElementById("leadEmail").value,
+service:document.getElementById("leadService").value,
+location:document.getElementById("leadLocation").value,
+message:document.getElementById("leadMessage").value,
+source:"Website"
+});
+if(result.success){toast("Enquiry received successfully.");e.target.reset();}
+else{toast("Unable to send enquiry.");}
+}catch(err){toast("Connection problem. Please WhatsApp us.");}
+btn.disabled=false;
+btn.textContent="Submit Enquiry →";
+});
+
+document.getElementById("referralForm").addEventListener("submit",async e=>{
+e.preventDefault();
+try{
+const result=await postAPI({
+action:"referral",
+referrerName:document.getElementById("referrerName").value,
+referrerPhone:document.getElementById("referrerPhone").value,
+customerName:document.getElementById("customerName").value,
+customerPhone:document.getElementById("customerPhone").value,
+service:document.getElementById("referralService").value,
+message:document.getElementById("referralMessage").value
+});
+if(result.success){toast("Referral submitted.");e.target.reset();closeModal("referralModal");}
+}catch(err){toast("Connection problem.");}
+});
+
+function openAI(){document.getElementById("aiOverlay").classList.add("show");document.getElementById("aiInput").focus();}
+function closeAI(){document.getElementById("aiOverlay").classList.remove("show");}
+
+function addMessage(text,type){
+const box=document.getElementById("aiMessages");
+const msg=document.createElement("div");
+msg.className="msg "+type;
+msg.textContent=text;
+box.appendChild(msg);
+box.scrollTop=box.scrollHeight;
+return msg;
+}
+
+/* =========================================================
+   BUILT-IN ASSISTANT
+   Runs entirely in the visitor's browser — no external AI
+   service, no API key, no per-message cost. It matches the
+   visitor's message against a knowledge base of everything
+   about Classic Expert Finishing LTD, and gracefully hands
+   off to the human team (with the question logged for the
+   owner) whenever it isn't confident about the answer.
+========================================================= */
+
+const KB=[
+{id:"greeting",keywords:["hi","hello","hey","good morning","good afternoon","good evening","morning"],reply:"Hi there 👋 I'm the Classic Expert assistant. Ask me about our services, pricing, booking, water-damage repair, wallpaper, or where we're based."},
+{id:"thanks",keywords:["thank","thanks","appreciate","cool thanks","ok thanks"],reply:"You're welcome! Let me know if there's anything else about your project I can help with."},
+{id:"services",keywords:["service","services","what do you do","what do you offer","offer","options","what can you"],reply:"We cover:\n• Door painting\n• Exterior painting\n• Interior painting\n• Speciality design painting\n• Wallpaper hanging\n• Water-damage repair\n\nWhich one are you interested in?"},
+{id:"booking",keywords:["book","booking","how do i start","get started","hire","how does it work","process","enquire","how do i book"],reply:"Booking is simple:\n1. Send your name, phone number and the service you need — through the form on this page or right here in chat.\n2. The team reviews it and contacts you.\n3. You agree on details and a schedule.\n4. We carry out the work.\n\nWant to leave your details here now?"},
+{id:"pricing",keywords:["price","cost","how much","pricing","quote","rate","charges","expensive","cheap","budget"],reply:"Pricing depends on the size of the space, the service and materials used, so we don't publish fixed rates — every job gets a proper quote. Tell me the service and roughly the size of the property, and I'll pass it to the team for an accurate quote."},
+{id:"location",keywords:["location","where are you","address","based","office","find you","akwa ibom","uyo"],reply:"We're based at Mbierebe, John Linus, Uyo 500321, Akwa Ibom, and take on jobs across Uyo and nearby areas. Share your property location and I'll flag it to the team."},
+{id:"contact",keywords:["contact","phone number","call you","whatsapp","reach you","speak to someone","talk to a person","human"],reply:"You can call 0813 241 0553 or message us on WhatsApp at 0806 303 2883 — tap the green button in the corner to open WhatsApp directly."},
+{id:"waterdamage",keywords:["water damage","water-damage","leak","damp","mold","mould","ceiling stain","flood","peeling wall"],reply:"We repair and refinish walls or ceilings affected by water damage — patching, treating the surface and repainting to match the rest of the space. Describe the extent of the damage (and roughly the size of the area) and I'll pass it to the team for an accurate assessment."},
+{id:"wallpaper",keywords:["wallpaper","paper hanging","feature wall","wall paper"],reply:"We install wallpaper with close attention to alignment and seams — full rooms or a single feature wall. Do you already have the wallpaper, or would you like guidance on materials first?"},
+{id:"design",keywords:["design","speciality","special effect","texture wall","decorative","pattern"],reply:"Our speciality design painting covers decorative finishes, textures and custom effects for spaces that want something beyond a flat coat of paint. Tell me the look you're going for and I'll note it for the team."},
+{id:"timeframe",keywords:["how long","duration","timeline","how many days","turnaround","when can you start","when can you finish"],reply:"Timeframes depend on the size of the job — a single room is much quicker than a full exterior. Once the team reviews your enquiry, they'll give you a realistic timeline for your specific project."},
+{id:"materials",keywords:["paint type","brand of paint","material","what paint","quality of paint"],reply:"We use quality, durable finishing materials suited to the surface and the Uyo climate. The team can walk you through specific paint and material options once they know the service and the space."},
+{id:"guarantee",keywords:["guarantee","warranty","insured","licensed","registered","trust","experience","how long have you"],reply:"Classic Expert Finishing LTD is a registered finishing company serving Uyo. The team can go over the specific guarantee that applies to your job when you get in touch."},
+{id:"payment",keywords:["payment","how do i pay","deposit","bank transfer","installment"],reply:"Payment terms — including any deposit — are agreed directly with the team once your quote is confirmed. They'll walk you through it."},
+{id:"referral",keywords:["refer","referral","know someone who needs","recommend you"],reply:"Use the \"Make A Referral\" section on this page — add their name and number and the team will follow up with them directly."},
+{id:"admin",keywords:["admin","dashboard","owner login","staff login"],reply:"The admin dashboard is private to the business owner. If that's you, use the private link you were given."}
+];
+
+function findReply(message){
+const lower=message.toLowerCase();
+let best=null,bestScore=0;
+KB.forEach(intent=>{
+let score=0;
+intent.keywords.forEach(k=>{if(lower.includes(k))score+=k.split(" ").length;});
+if(score>bestScore){bestScore=score;best=intent;}
+});
+return best;
+}
+
+function showTyping(){
+const typing=document.createElement("div");
+typing.className="msg ai";
+typing.innerHTML='<div class="typing-dots"><span></span><span></span><span></span></div>';
+typing.id="aiTyping";
+document.getElementById("aiMessages").appendChild(typing);
+document.getElementById("aiMessages").scrollTop=document.getElementById("aiMessages").scrollHeight;
+return typing;
+}
+
+function logUnmatchedQuestion(question){
+if(!CRM_API||CRM_API.includes("PASTE_YOUR"))return;
+postAPI({action:"chatQuestion",question:question,matched:"none"}).catch(()=>{});
+}
+
+function offerHandoff(){
+const box=document.getElementById("aiMessages");
+const wrap=document.createElement("div");
+wrap.className="msg ai";
+wrap.style.width="84%";
+wrap.innerHTML=`<div style="margin-bottom:9px">That's specific enough that I'd rather have the team give you a proper answer than guess. Leave your name and number and they'll reach out — or use the WhatsApp button below.</div>
+<input placeholder="Your name" style="width:100%;padding:9px 10px;margin-bottom:6px;border-radius:9px;border:1px solid #292929;background:#080808;color:#fff;font-size:12px;" class="handoffName">
+<input placeholder="Phone number" style="width:100%;padding:9px 10px;margin-bottom:8px;border-radius:9px;border:1px solid #292929;background:#080808;color:#fff;font-size:12px;" class="handoffPhone">
+<button style="width:100%;padding:9px;border:0;border-radius:9px;background:var(--gold);color:#080808;font-weight:900;font-size:12px;">Send my number →</button>`;
+const btn=wrap.querySelector("button");
+const nameEl=wrap.querySelector(".handoffName");
+const phoneEl=wrap.querySelector(".handoffPhone");
+btn.addEventListener("click",async()=>{
+const name=nameEl.value.trim(),phone=phoneEl.value.trim();
+if(!name||!phone){toast("Add your name and phone number.");return;}
+btn.disabled=true;btn.textContent="Sending...";
+try{
+const r=await postAPI({action:"lead",name:name,phone:phone,service:"",location:"",message:"Requested a callback via the AI assistant.",source:"AI Chat"});
+if(r.success){wrap.innerHTML="Thanks — the team has your number and will reach out soon.";}
+else{btn.disabled=false;btn.textContent="Send my number →";toast("Couldn't send — try WhatsApp instead.");}
+}catch(err){btn.disabled=false;btn.textContent="Send my number →";toast("Connection problem.");}
+});
+box.appendChild(wrap);
+box.scrollTop=box.scrollHeight;
+}
+
+let AI_BUSY=false;
+
+async function sendAI(){
+if(AI_BUSY)return;
+const input=document.getElementById("aiInput");
+const message=input.value.trim();
+if(!message)return;
+input.value="";
+addMessage(message,"user");
+AI_HISTORY.push({role:"user",text:message});
+
+AI_BUSY=true;
+const sendBtn=document.querySelector(".ai-send");
+if(sendBtn)sendBtn.disabled=true;
+const typing=showTyping();
+
+setTimeout(()=>{
+typing.remove();
+const intent=findReply(message);
+if(intent){
+addMessage(intent.reply,"ai");
+AI_HISTORY.push({role:"assistant",text:intent.reply});
+}else{
+offerHandoff();
+logUnmatchedQuestion(message);
+}
+AI_BUSY=false;
+if(sendBtn)sendBtn.disabled=false;
+input.focus();
+},450+Math.random()*350);
+}
+
+function quickAI(text){document.getElementById("aiInput").value=text;sendAI();}
+
+document.getElementById("aiInput").addEventListener("keydown",e=>{if(e.key==="Enter")sendAI();});
+
+function checkHash(){
+if(location.hash.toLowerCase()==="#admin"){openModal("adminLogin");}
+}
+window.addEventListener("hashchange",checkHash);
+checkHash();
+
+async function loginAdmin(){
+const code=document.getElementById("adminCode").value.trim();
+if(!code){toast("Enter your admin code.");return;}
+const btn=document.querySelector("#adminLogin .btn");
+if(btn){btn.disabled=true;btn.textContent="Checking...";}
+try{
+const result=await postAPI({action:"login",key:code});
+if(result.success){
+ADMIN_KEY=code;
+sessionStorage.setItem("CE_ADMIN",code);
+closeModal("adminLogin");
+document.getElementById("publicSite").style.display="none";
+document.getElementById("adminApp").style.display="block";
+await loadDashboard();
+}else{toast("Incorrect admin code.");}
+}catch(err){toast("Could not connect to the dashboard.");}
+if(btn){btn.disabled=false;btn.textContent="Enter Dashboard";}
+}
+
+function logoutAdmin(){
+ADMIN_KEY="";
+sessionStorage.removeItem("CE_ADMIN");
+document.getElementById("adminApp").style.display="none";
+document.getElementById("publicSite").style.display="block";
+history.replaceState(null,"",location.pathname+location.search);
+}
+
+async function restoreAdmin(){
+const key=sessionStorage.getItem("CE_ADMIN");
+if(!key)return;
+try{
+const result=await postAPI({action:"login",key:key});
+if(result.success){
+ADMIN_KEY=key;
+document.getElementById("publicSite").style.display="none";
+document.getElementById("adminApp").style.display="block";
+loadDashboard();
+}else{
+sessionStorage.removeItem("CE_ADMIN");
+}
+}catch(err){}
+}
+restoreAdmin();
+
+async function loadDashboard(){
+if(!ADMIN_KEY)return;
+try{
+const result=await postAPI({action:"dashboard",key:ADMIN_KEY});
+if(!result.success){logoutAdmin();return;}
+DATA=result;
+renderAll();
+}catch(err){toast("Dashboard connection failed.");}
+}
+
+function animateNumber(el,to){
+const from=Number(el.textContent)||0;
+to=Number(to)||0;
+const duration=600;
+const start=performance.now();
+function tick(now){
+const p=Math.min((now-start)/duration,1);
+const eased=1-Math.pow(1-p,3);
+el.textContent=Math.round(from+(to-from)*eased);
+if(p<1)requestAnimationFrame(tick);
+}
+requestAnimationFrame(tick);
+}
+
+function renderAll(){
+const s=DATA.stats;
+animateNumber(document.getElementById("sVisitors"),s.visitors);
+animateNumber(document.getElementById("sToday"),s.todayVisitors);
+animateNumber(document.getElementById("sLeads"),s.leads);
+animateNumber(document.getElementById("sNew"),s.newLeads);
+animateNumber(document.getElementById("sRefs"),s.referrals);
+animateNumber(document.getElementById("sNewRefs"),s.newReferrals);
+animateNumber(document.getElementById("sTasks"),s.tasks);
+animateNumber(document.getElementById("sAppointments"),s.appointments);
+animateNumber(document.getElementById("sChat"),s.unmatchedQuestions||0);
+renderLeads();
+renderRefs();
+renderTasks();
+renderAppointments();
+renderVisitors();
+renderChat();
+}
+
+function renderChat(){
+const rows=DATA.chatQuestions||[];
+let html=`<table><thead><tr><th>Date</th><th>Question</th></tr></thead><tbody>`;
+if(!rows.length){
+html+=`<tr><td colspan="2" style="color:#777">No unanswered questions yet.</td></tr>`;
+}
+rows.forEach(r=>{
+html+=`<tr><td>${esc(r.Date)}</td><td>${esc(r.Question)}</td></tr>`;
+});
+html+=`</tbody></table>`;
+document.getElementById("chatTable").innerHTML=html;
+}
+
+function renderLeads(){
+const rows=DATA.leads;
+let html=`<table><thead><tr><th>Date</th><th>Name</th><th>Phone</th><th>Service</th><th>Location</th><th>Status</th></tr></thead><tbody>`;
+rows.forEach(r=>{
+html+=`<tr>
+<td>${esc(r.Date)}</td>
+<td>${esc(r.Name)}</td>
+<td><a href="tel:${esc(r.Phone)}">${esc(r.Phone)}</a></td>
+<td>${esc(r.Service)}</td>
+<td>${esc(r.Location)}</td>
+<td>
+<select onchange="changeLead('${esc(r.ID)}',this.value)" style="background:#111;color:#fff;border:1px solid #333;padding:7px;border-radius:7px;">
+${option("New",r.Status)}${option("Contacted",r.Status)}${option("Quoted",r.Status)}${option("Follow-up",r.Status)}${option("Won",r.Status)}${option("Completed",r.Status)}${option("Lost",r.Status)}
+</select>
+</td>
+</tr>`;
+});
+html+=`</tbody></table>`;
+document.getElementById("leadsTable").innerHTML=html;
+document.getElementById("recentLeads").innerHTML=html;
+}
+
+function option(name,current){
+return `<option ${String(name)===String(current)?"selected":""}>${name}</option>`;
+}
+
+async function changeLead(id,status){
+const result=await postAPI({action:"updateLead",key:ADMIN_KEY,id:id,status:status});
+if(result.success){toast("Lead updated.");loadDashboard();}
+}
+
+function renderRefs(){
+let html=`<table><thead><tr><th>Date</th><th>Referrer</th><th>Customer</th><th>Phone</th><th>Service</th><th>Status</th></tr></thead><tbody>`;
+DATA.referrals.forEach(r=>{
+html+=`<tr>
+<td>${esc(r.Date)}</td>
+<td>${esc(r["Referrer Name"])}</td>
+<td>${esc(r["Customer Name"])}</td>
+<td>${esc(r["Customer Phone"])}</td>
+<td>${esc(r.Service)}</td>
+<td>
+<select onchange="changeReferral('${esc(r.ID)}',this.value)" style="background:#111;color:#fff;border:1px solid #333;padding:7px;border-radius:7px;">
+${option("New",r.Status)}${option("Contacted",r.Status)}${option("Converted",r.Status)}${option("Lost",r.Status)}
+</select>
+</td>
+</tr>`;
+});
+html+=`</tbody></table>`;
+document.getElementById("refsTable").innerHTML=html;
+}
+
+async function changeReferral(id,status){
+const result=await postAPI({action:"updateReferral",key:ADMIN_KEY,id:id,status:status});
+if(result.success){toast("Referral updated.");loadDashboard();}
+}
+
+function renderTasks(){
+let html=`<table><thead><tr><th>Due</th><th>Customer</th><th>Phone</th><th>Task</th><th>Status</th><th></th></tr></thead><tbody>`;
+DATA.tasks.forEach(t=>{
+html+=`<tr>
+<td>${esc(t["Due Date"])} ${t.Time?" "+esc(t.Time):""}</td>
+<td>${esc(t.Customer)}</td>
+<td>${esc(t.Phone)}</td>
+<td>${esc(t.Task)}</td>
+<td>${esc(t.Status)}</td>
+<td>${String(t.Status).toLowerCase()!=="completed"?`<button onclick="completeTask('${esc(t.ID)}')">Complete</button>`:"✓"}</td>
+</tr>`;
+});
+html+=`</tbody></table>`;
+document.getElementById("tasksTable").innerHTML=html;
+}
+
+async function completeTask(id){
+const r=await postAPI({action:"completeTask",key:ADMIN_KEY,id:id});
+if(r.success){toast("Follow-up completed.");loadDashboard();}
+}
+
+function renderAppointments(){
+let html=`<table><thead><tr><th>Date</th><th>Time</th><th>Customer</th><th>Phone</th><th>Service</th><th>Location</th><th>Status</th></tr></thead><tbody>`;
+DATA.appointments.forEach(a=>{
+html+=`<tr>
+<td>${esc(a["Appointment Date"])}</td>
+<td>${esc(a.Time)}</td>
+<td>${esc(a.Customer)}</td>
+<td>${esc(a.Phone)}</td>
+<td>${esc(a.Service)}</td>
+<td>${esc(a.Location)}</td>
+<td>${String(a.Status).toLowerCase()!=="completed"?`<button onclick="completeAppointment('${esc(a.ID)}')">Complete</button>`:"Completed"}</td>
+</tr>`;
+});
+html+=`</tbody></table>`;
+document.getElementById("appointmentsTable").innerHTML=html;
+}
+
+async function completeAppointment(id){
+const r=await postAPI({action:"completeAppointment",key:ADMIN_KEY,id:id});
+if(r.success){toast("Appointment completed.");loadDashboard();}
+}
+
+function renderVisitors(){
+let html=`<table><thead><tr><th>Date</th><th>Time</th><th>Page</th><th>Source</th><th>Device</th></tr></thead><tbody>`;
+DATA.visitors.slice(0,100).forEach(v=>{
+html+=`<tr>
+<td>${esc(v.Date)}</td>
+<td>${esc(v.Time)}</td>
+<td>${esc(v.Page)}</td>
+<td>${esc(v.Source)}</td>
+<td>${esc(v.Device)}</td>
+</tr>`;
+});
+html+=`</tbody></table>`;
+document.getElementById("visitorsTable").innerHTML=html;
+}
+
+function adminSection(name,button){
+document.querySelectorAll(".admin-section").forEach(x=>x.classList.remove("active"));
+document.querySelectorAll(".side").forEach(x=>x.classList.remove("active"));
+document.getElementById("section-"+name).classList.add("active");
+button.classList.add("active");
+}
+
+document.getElementById("taskForm").addEventListener("submit",async e=>{
+e.preventDefault();
+const r=await postAPI({
+action:"task",
+key:ADMIN_KEY,
+customer:document.getElementById("taskCustomer").value,
+phone:document.getElementById("taskPhone").value,
+dueDate:document.getElementById("taskDate").value,
+time:document.getElementById("taskTime").value,
+task:document.getElementById("taskText").value,
+notes:document.getElementById("taskNotes").value
+});
+if(r.success){toast("Follow-up created.");e.target.reset();closeModal("taskModal");loadDashboard();}
+});
+
+document.getElementById("appointmentForm").addEventListener("submit",async e=>{
+e.preventDefault();
+const r=await postAPI({
+action:"appointment",
+key:ADMIN_KEY,
+customer:document.getElementById("appointmentCustomer").value,
+phone:document.getElementById("appointmentPhone").value,
+date:document.getElementById("appointmentDate").value,
+time:document.getElementById("appointmentTime").value,
+service:document.getElementById("appointmentService").value,
+location:document.getElementById("appointmentLocation").value,
+notes:document.getElementById("appointmentNotes").value
+});
+if(r.success){toast("Appointment created.");e.target.reset();closeModal("appointmentModal");loadDashboard();}
+});
+
+document.querySelectorAll(".modal").forEach(modal=>{
+modal.addEventListener("click",e=>{
+if(e.target===modal)modal.classList.remove("show");
+});
+});
+</script>
+
+</body>
+</html>
